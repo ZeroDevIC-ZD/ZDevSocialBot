@@ -16,10 +16,14 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //потом сделаю (да да потом дпделаю девелопер)
          System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
         Scanner scan=new Scanner(System.in);
         if(scan.hasNextInt()){
-            
+            switch(scan.nextInt()){
+                default:
+                    System.out.println("It's non here! Set lang:EN");
+            }
         }
     }
     
