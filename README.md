@@ -1,2 +1,2 @@
 # ZDevSocialBot
-Chat Bot
+It's chat bot
