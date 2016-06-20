@@ -1,2 +1,6 @@
 # ZDevSocialBot
-It's chat bot
+Chat Bot
+It's works with
+VK
+Ok
+etc
