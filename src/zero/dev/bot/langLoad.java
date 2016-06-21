@@ -15,26 +15,26 @@
  */
 package zero.dev.bot;
 
-import java.util.Scanner;
+import java.io.File;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 /**
  *
- * @author AirCool
+ * @author gwarp
+ * 
+ * Description:
+ * class for load langPacks;
  */
-public class main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        //потом сделаю (да да потом дпделаю девелопер)
-         System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
-        Scanner scan=new Scanner(System.in);
-        if(scan.hasNextInt()){
-            switch(scan.nextInt()){
-                default:
-                    System.out.println("It's non here! Set lang:EN");
-            }
-        }
+public class langLoad {
+    
+    JSONParser pars=new JSONParser();
+    Object костыль;
+    File langFile = new File("xml/");
+    
+    public String[] getLang(String code){
+        
+        return new String[3];
     }
     
 }
