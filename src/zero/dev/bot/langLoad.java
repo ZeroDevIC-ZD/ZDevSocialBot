@@ -16,6 +16,8 @@
 package zero.dev.bot;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -28,12 +30,12 @@ import org.json.simple.parser.JSONParser;
  */
 public class langLoad {
     
-    JSONParser pars=new JSONParser();
-    Object костыль;
-    File langFile = new File("xml/");
+    public static JSONParser pars=new JSONParser();
+    public static Object костыль;
+    public static File langFile = new File("lang/RU.json");
     
-    public String[] getLang(String code){
-        
+    public static String[] getLang(String code) throws FileNotFoundException{
+        System.out.println(langFile.toString());
         return new String[3];
     }
     
