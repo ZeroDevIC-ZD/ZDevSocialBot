@@ -46,12 +46,8 @@ public class main {
                     System.out.println("It's non here! Set lang:EN");
             }
             String[] lang;
-            try {
-                form.show();
-                lang = langLoad.getLang("EN");
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            form.show();
+            langLoad langObj=new langLoad("RU");
         }
     }
     
