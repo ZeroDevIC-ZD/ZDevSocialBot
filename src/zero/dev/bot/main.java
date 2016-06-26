@@ -47,7 +47,7 @@ public class main {
             }
             String[] lang;
             form.show();
-            langLoad langObj=new langLoad("RU");
+            //langLoad langObj=new langLoad("RU");
         }
     }
     
