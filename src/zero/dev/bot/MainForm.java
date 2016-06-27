@@ -384,7 +384,39 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        this.getContentPane().setBackground(Color.GRAY);
+        this.getContentPane().setBackground(Color.darkGray);
+        jLabel1.setForeground(Color.green);
+        jLabel2.setForeground(Color.green);
+        jLabel3.setForeground(Color.green);
+        jLabel4.setForeground(Color.green);
+        jLabel5.setForeground(Color.green);
+        jLabel6.setForeground(Color.green);
+        jLabel7.setForeground(Color.green);
+        jLabel8.setForeground(Color.green);
+        jLabel9.setForeground(Color.green);
+        jLabel10.setForeground(Color.green);
+        jLabel11.setForeground(Color.green);
+        jButton1.setBackground(Color.green);
+        jButton2.setBackground(Color.green);
+        jButton3.setBackground(Color.green);
+        jButton4.setBackground(Color.green);
+        jButton5.setBackground(Color.green);
+        jButton6.setBackground(Color.green);
+        jRadioButton1.setBackground(Color.darkGray);
+        jRadioButton2.setBackground(Color.darkGray);
+        jRadioButton3.setBackground(Color.darkGray);
+        jRadioButton4.setBackground(Color.darkGray);
+        jRadioButton1.setForeground(Color.green);
+        jRadioButton2.setForeground(Color.green);
+        jRadioButton3.setForeground(Color.green);
+        jRadioButton4.setForeground(Color.green);
+        jScrollPane1.setBackground(Color.darkGray);
+        jScrollPane1.setForeground(Color.green);
+        jScrollPane2.setBackground(Color.darkGray);
+        jScrollPane2.setForeground(Color.green);
+        jScrollPane3.setBackground(Color.darkGray);
+        jScrollPane3.setForeground(Color.green);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
