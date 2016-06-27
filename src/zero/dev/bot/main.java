@@ -15,7 +15,6 @@
  */
 package zero.dev.bot;
 
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,31 +23,46 @@ import java.util.logging.Logger;
  * @authors: AirCool & AirDragon
  */
 public class main {
-
+    
+    static langLoad langObj;
+    
+    static String
+            langCode="EN";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
-        Scanner scan;
-        scan = new Scanner(System.in);
-        if(scan.hasNextInt()){
-            MainForm form = new MainForm();
-            switch(scan.nextInt()){
-                case 1:
-                    System.out.println("Вы выбрали Русский язык, Здравствуйте");
-                    form.setLanguage(1);
-                    break;
-                case 2:
-                    form.setLanguage(2);
-                    break;
-                default:
-                    System.out.println("It's non here! Set lang:EN");
-            }
-            String[] lang;
+        MainForm form = new MainForm();
+        if (args[0].equals((Object) "true")) {
+            form.setLanguage(2);
             form.show();
-            //langLoad langObj=new langLoad("RU");
+        } else {
+            System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
+            Scanner scan;
+            scan = new Scanner(System.in);
+            if (scan.hasNextInt()) {
+                switch (scan.nextInt()) {
+                    case 1:
+                        langCode="RU";
+                        System.out.println("Вы выбрали Русский язык, Здравствуйте");
+                        form.setLanguage(1);
+                        break;
+                    case 2:
+                        langCode="EN";
+                        form.setLanguage(2);
+                        break;
+                    default:
+                        System.out.println("It's non here! Set lang:EN");
+                }
+                form.show();
+
+                langObj = new langLoad(langCode);
+            }
         }
     }
-    
+
+    boolean isFirstRun() {
+        return true;
+    }
+
 }

@@ -16,15 +16,17 @@
 package zero.dev.bot;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -34,24 +36,50 @@ import org.json.simple.parser.JSONParser;
  * class for load langPacks;
  */
 public class langLoad {
-    String error="Ok";
-    public JSONParser pars=new JSONParser();
-    public InputStream langFile = getClass().getResourceAsStream("/res/lang/RU.json");
+    
+    String
+            error="Ok",
+            file,
+            name="name",
+            langCode="EN";
+    
+    public String
+            botName;//default bot name on seted lang
+    
+    JSONParser pars=new JSONParser();
+    JSONObject jsonObj;
+    Object obj;
+    InputStream langFile;
     
     public langLoad(String code){
+        langCode=code;
+        
         try {
-            String file=getTranslateFile();
-        } catch (IOException ex) {
+            file = getTranslateFile();
+            jsonObj=(JSONObject) pars.parse(file);
+        } catch (IOException | ParseException ex) {
+            System.out.println("Error! Please say developers about it.");
+            error="nullPointerException";
+            Logger.getLogger(langLoad.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        jsonObj.get((Object) name);
+    }
+    
+    public langLoad(){
+        error="nonSetedLang!";
+        try {
+            file = getTranslateFile();
+            jsonObj=(JSONObject) pars.parse(file);
+        } catch (IOException | ParseException ex) {
+            System.out.println("Error! Please say developers about it.");
+            error="nullPointerException";
             Logger.getLogger(langLoad.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public langLoad(){
-        
-    }
-    
-    public String getTranslateFile() throws FileNotFoundException, IOException{
-        
+    private String getTranslateFile() throws FileNotFoundException, IOException{
+        langFile = getClass().getResourceAsStream("/lang/" + langCode + ".json");
         BufferedReader reader = new BufferedReader(new InputStreamReader(langFile));
         StringBuilder out = new StringBuilder();
         String line;
@@ -59,8 +87,6 @@ public class langLoad {
             out.append(line);
         }
         
-        System.out.println(out.toString());
-        System.out.println();
         return out.toString();
     }
     
