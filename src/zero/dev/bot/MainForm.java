@@ -16,6 +16,7 @@
 package zero.dev.bot;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -67,7 +68,6 @@ public class MainForm extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -87,6 +87,7 @@ public class MainForm extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ZBot's client");
@@ -135,15 +136,13 @@ public class MainForm extends javax.swing.JFrame {
         jTextArea2.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(0, 204, 51));
         jTextArea2.setRows(5);
-        jTextArea2.setText("@run (anyFunk(0));\n");
+        jTextArea2.setText("@run (anyFunc(0));\n");
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jTextArea3.setText("Здравствуй.");
         jScrollPane3.setViewportView(jTextArea3);
-
-        jToggleButton1.setText("Одобрить");
 
         jButton2.setText("Включить режим контроля отправляемых сообщений");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +199,8 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Одобрить");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,14 +217,13 @@ public class MainForm extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -325,7 +325,7 @@ public class MainForm extends javax.swing.JFrame {
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane3)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -385,16 +385,17 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         switch(jButton3.getText()){
-            case "вкл":
-                jButton3.setText("выкл");
+            case "Вкл":
+                jButton3.setText("Выкл");
                 break;
             default:
-                jButton3.setText("вкл");
+                jButton3.setText("Вкл");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        this.getContentPane().setBackground(Color.darkGray);
+        this.getContentPane().setBackground(Color.black);
+        
         jLabel1.setForeground(Color.green);
         jLabel2.setForeground(Color.green);
         jLabel3.setForeground(Color.green);
@@ -406,26 +407,81 @@ public class MainForm extends javax.swing.JFrame {
         jLabel9.setForeground(Color.green);
         jLabel10.setForeground(Color.green);
         jLabel11.setForeground(Color.green);
-        jButton1.setBackground(Color.green);
-        jButton2.setBackground(Color.green);
-        jButton3.setBackground(Color.green);
-        jButton4.setBackground(Color.green);
-        jButton5.setBackground(Color.green);
-        jButton6.setBackground(Color.green);
-        jRadioButton1.setBackground(Color.darkGray);
-        jRadioButton2.setBackground(Color.darkGray);
-        jRadioButton3.setBackground(Color.darkGray);
-        jRadioButton4.setBackground(Color.darkGray);
+        
+        
+        jButton1.setBackground(Color.black);
+        jButton2.setBackground(Color.black);
+        jButton3.setBackground(Color.black);
+        jButton4.setBackground(Color.black);
+        jButton5.setBackground(Color.black);
+        jButton6.setBackground(Color.black);
+        jButton7.setBackground(Color.black);
+        
+        //////////////////////////////////////
+        //jButton1.setBackground(Color.green);
+        //jButton2.setBackground(Color.green);
+        //jButton3.setBackground(Color.green);
+        //jButton4.setBackground(Color.green); //откат к зеленым кнопкам
+        //jButton5.setBackground(Color.green);
+        //jButton6.setBackground(Color.green);
+        //jButton7.setBackground(Color.green);
+        //////////////////////////////////////
+        
+        jButton1.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton2.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton3.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton4.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton5.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton6.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jButton7.setBorder((BorderFactory.createLineBorder(Color.green)));
+        
+        
+        jButton1.setForeground(Color.green);
+        jButton2.setForeground(Color.green);
+        jButton3.setForeground(Color.green);
+        jButton4.setForeground(Color.green);
+        jButton5.setForeground(Color.green);
+        jButton6.setForeground(Color.green);
+        jButton7.setForeground(Color.green);
+        
+        
+        jRadioButton1.setBackground(Color.black);
+        jRadioButton2.setBackground(Color.black);
+        jRadioButton3.setBackground(Color.black);
+        jRadioButton4.setBackground(Color.black);
         jRadioButton1.setForeground(Color.green);
         jRadioButton2.setForeground(Color.green);
         jRadioButton3.setForeground(Color.green);
         jRadioButton4.setForeground(Color.green);
-        jScrollPane1.setBackground(Color.darkGray);
-        jScrollPane1.setForeground(Color.green);
-        jScrollPane2.setBackground(Color.darkGray);
-        jScrollPane2.setForeground(Color.green);
-        jScrollPane3.setBackground(Color.darkGray);
-        jScrollPane3.setForeground(Color.green);
+        
+        jSlider1.setBackground(Color.black);
+        jSlider1.setForeground(Color.green);
+        jSlider2.setBackground(Color.black);
+        jSlider2.setForeground(Color.green);
+        jSlider1.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jSlider2.setBorder((BorderFactory.createLineBorder(Color.green)));
+        
+        jTextArea1.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jTextArea2.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jTextArea3.setBorder((BorderFactory.createLineBorder(Color.green)));
+        jTextArea3.setBackground(Color.black);
+        jTextArea3.setForeground(Color.green);
+        
+        jTextField2.setBackground(Color.black);
+        jTextField2.setForeground(Color.green);
+        jTextField2.setBorder((BorderFactory.createLineBorder(Color.green)));
+        
+        jComboBox2.setBackground(Color.black);
+        jComboBox2.setForeground(Color.green);
+        jComboBox2.setBorder((BorderFactory.createLineBorder(Color.green)));
+        
+        loginField.setBackground(Color.black);
+        loginField.setForeground(Color.green);
+        
+        passwordField.setBackground(Color.black);
+        passwordField.setForeground(Color.green);
+        loginField.setBorder((BorderFactory.createLineBorder(Color.green)));
+        passwordField.setBorder((BorderFactory.createLineBorder(Color.green)));
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -471,6 +527,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -496,7 +553,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField loginField;
     private javax.swing.JPasswordField passwordField;
     // End of variables declaration//GEN-END:variables

@@ -33,10 +33,10 @@ public class main {
      */
     public static void main(String[] args) {
         MainForm form = new MainForm();
-        if (args[0].equals((Object) "true")) {
-            form.setLanguage(2);
-            form.show();
-        } else {
+        //if (args[0].equals((Object) "true")) {
+            //form.setLanguage(2);
+            //form.show();
+        //} else {
             System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
             Scanner scan;
             scan = new Scanner(System.in);
@@ -45,19 +45,19 @@ public class main {
                     case 1:
                         langCode="RU";
                         System.out.println("Вы выбрали Русский язык, Здравствуйте");
-                        form.setLanguage(1);
+                        //form.setLanguage(1);
                         break;
                     case 2:
                         langCode="EN";
-                        form.setLanguage(2);
+                        //form.setLanguage(2);
                         break;
                     default:
                         System.out.println("It's non here! Set lang:EN");
                 }
                 form.show();
 
-                langObj = new langLoad(langCode);
-            }
+                //langObj = new langLoad(langCode);
+            //}
         }
     }
 
