@@ -18,6 +18,7 @@ package zero.dev.bot;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.*;
 /**
  *
  * @authors: AirCool & AirDragon
@@ -31,7 +32,7 @@ public class main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         MainForm form = new MainForm();
         //if (args[0].equals((Object) "true")) {
             //form.setLanguage(2);
@@ -40,6 +41,14 @@ public class main {
             System.out.println("ChatBot by ZeroDev => AirTeam started \n Please choose your lang: \n 1)RU \n 2)EN");
             Scanner scan;
             scan = new Scanner(System.in);
+            try (FileReader rr = new FileReader("C:\\Users\\vitalia\\ZDevSocialBot\\new.config")) {
+                int age = rr.read();
+            }
+            catch (IOException e){
+                FileWriter wr = new FileWriter("C:\\Users\\vitalia\\ZDevSocialBot\\new.config");
+                wr.write("18");
+                wr.flush();
+            }
             if (scan.hasNextInt()) {
                 switch (scan.nextInt()) {
                     case 1:
@@ -55,6 +64,7 @@ public class main {
                         System.out.println("It's non here! Set lang:EN");
                 }
                 form.show();
+                
 
                 //langObj = new langLoad(langCode);
             //}
